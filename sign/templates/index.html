@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>发布会管理</title>
+</head>
+<body>
+<div class="main" style="text-align: center">
+<h1>发布会管理</h1>
+<form method="post" action="/login_action/">
+
+    <div>
+    <span>用户名：</span>
+        <input name="username" type="text" placeholder="username"><br>
+    </div>
+    <div>
+    <span>密码：</span>
+        <input name="password" type="text" placeholder="password"><br>
+    {{ error }}<br>
+        </div>
+    <button id="btn" type="submit">登录</button>
+{% csrf_token %}
+</form>
+    {%for line in form%}
+        {{line.username}}
+        {{line.password}}
+    {% endfor %}
+
+    </div>
+
+</body>
+</html>
